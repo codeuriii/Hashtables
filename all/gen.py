@@ -1,5 +1,4 @@
 from string import digits, ascii_letters, punctuation
-import json
 
 chars = list(digits + ascii_letters + punctuation)
 
