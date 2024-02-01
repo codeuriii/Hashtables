@@ -11,7 +11,7 @@ def gen(reste: list[str]):
     return data
 
 data = chars
-for i in range(1, 10):
+for i in range(4, 10):
     with open(f"lists/{i}.txt", "w") as f:
         for element in data:
             f.write(f"{element}\n")
