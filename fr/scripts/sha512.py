@@ -4,7 +4,7 @@ import json
 def hash_md5(input_string: str):
     input_bytes = input_string.encode()
     
-    md5_hasher = hashlib.md5()
+    md5_hasher = hashlib.sha512()
     
     md5_hasher.update(input_bytes)
     
@@ -16,5 +16,5 @@ with open("../dict-fr.txt", "r", encoding="utf-8") as f:
     for line in f.readlines():
         data[line.removesuffix("\n")] = hash_md5(line.removesuffix("\n"))
     
-with open("../result/md5.json", "w", encoding="utf-8") as f:
+with open("../result/sha512.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
