@@ -12,7 +12,8 @@ def gen(reste: list[str]):
 
 data = chars
 for i in range(1, 10):
-    with open(f"lists/{i}.json", "w") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    with open(f"lists/{i}.txt", "w") as f:
+        for element in data:
+            f.write(f"{element}\n")
     
     data = gen(data)
