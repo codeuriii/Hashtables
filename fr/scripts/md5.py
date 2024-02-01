@@ -16,9 +16,9 @@ def hash_md5(input_string: str):
     
     return md5_hash
 data = {}
-with open("dict-fr.txt", "r", encoding="utf-8") as f:
+with open("../dict-fr.txt", "r", encoding="utf-8") as f:
     for line in f.readlines():
         data[line.removesuffix("\n")] = hash_md5(line.removesuffix("\n"))
     
-with open("md5.json", "w", encoding="utf-8") as f:
+with open("../result/md5.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
